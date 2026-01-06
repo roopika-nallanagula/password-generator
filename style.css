@@ -1,0 +1,156 @@
+/* ================= BODY & MODE ================= */
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  transition: background 0.5s, color 0.5s;
+}
+
+/* Light Mode */
+body.light {
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
+  color: #333;
+}
+
+/* Dark Mode */
+body.dark {
+  background: linear-gradient(135deg, #2d3436, #000);
+  color: #eee;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  width: 360px;
+  transition: background 0.5s, color 0.5s;
+}
+
+body.dark .container { background: #2d3436; color: #eee; }
+
+h1 { 
+  margin-bottom: 18px; 
+  font-size: 22px; 
+  text-align: center; 
+}
+
+/* ================= INPUTS ================= */
+.input-group, .checkbox-group { margin-bottom: 12px; text-align: left; }
+.checkbox-group label { display: block; margin: 6px 0; cursor: pointer; }
+input[type="number"] { width: 70px; padding: 6px; border-radius: 6px; border: 1px solid #ccc; }
+
+/* ================= BUTTONS ================= */
+button {
+  background: #52a0dc;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+button:hover { background: #88b9ea; }
+
+/* Button groups */
+.button-group { display: flex; gap: 8px; justify-content: center; margin-top: 8px; flex-wrap: wrap; }
+
+/* ================= OUTPUT SECTION ================= */
+.output {
+  position: relative;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+}
+
+#password {
+  width: 100%;
+  padding: 10px 130px 10px 10px; /* space for buttons on right */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: monospace;
+  transition: all 0.3s;
+}
+
+/* Warning below password box */
+.warning-text {
+  color: #cc2b2b;
+  font-style: italic;
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+/* Buttons inside password box */
+.password-actions {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 5px;
+}
+
+.password-actions button {
+  background: #e0ebf3;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.password-actions button:hover { background: #818f9d; }
+
+/* Copied message */
+#copiedMessage {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  font-size: 12px;
+  color: rgb(15, 231, 15);
+  opacity: 0;
+  margin-top: 2px;
+  transition: opacity 0.5s;
+}
+.fade-out { animation: fadeOut 2s forwards; }
+@keyframes fadeOut { 0% {opacity:1;} 80% {opacity:1;} 100% {opacity:0;} }
+
+/* ================= STRENGTH BAR ================= */
+.strength-container { margin-top: 10px; height: 10px; border-radius: 5px; background: #eee; }
+.strength-bar { height: 100%; width: 0; border-radius: 5px; transition: width 0.3s; }
+
+/* ================= SAVED PASSWORDS ================= */
+.saved-passwords { margin-top: 15px; text-align: left; }
+.saved-passwords ul { list-style: none; padding-left: 0; max-height: 120px; overflow-y: auto; }
+.saved-passwords li { margin: 4px 0; background: #f1f1f1; padding: 4px 8px; border-radius: 4px; display: flex; justify-content: space-between; }
+body.dark .saved-passwords li { background: #444; }
+.saved-passwords button { background: none; border: none; color: #0984e3; cursor: pointer; font-size: 12px; }
+
+/* Clear saved passwords button */
+.clear-btn { margin-top: 8px; padding: 6px 10px; border: none; border-radius: 6px; background: #d63031; color: white; cursor: pointer; font-size: 14px; transition: background 0.3s; }
+.clear-btn:hover { background: #ff7675; }
+
+/* ================= DARK MODE TOGGLE ================= */
+.dark-toggle {
+  position: fixed; top: 20px; right: 20px;
+  background: #7b93a6; color: white; border: none;
+  border-radius: 50%; width: 50px; height: 50px; font-size: 24px;
+  cursor: pointer; box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: background 0.3s, transform 0.3s;
+}
+.dark-toggle:hover { background: #92aac2; transform: scale(1.1); }
+
+/* Eye icon color always black */
+#toggle i { color: black; }
+
+/* Optional hover effect */
+#toggle:hover i { color: #0984e3; }
+
+/* Make Copy button text black */
+#copy { color: black; background: #f1f1f1; border: 1px solid #ccc; }
+#copy:hover { background: #e0e0e0; }

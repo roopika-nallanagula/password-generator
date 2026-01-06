@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Password Generator</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="light">
+
+  <!-- Dark Mode Toggle Button -->
+  <button id="toggle-mode" class="dark-toggle">🌙</button>
+
+  <div class="container">
+    
+    <!-- Heading -->
+    <h1>Password Generator 🔐</h1>
+
+    <!-- Password Length Input -->
+    <div class="input-group">
+      <label for="length">Password Length:</label>
+      <input type="number" id="length" min="4" max="64" value="12">
+    </div>
+
+    <!-- Character Type Selection -->
+    <div class="checkbox-group">
+      <label><input type="checkbox" id="uppercase"> Include Uppercase</label>
+      <label><input type="checkbox" id="lowercase"> Include Lowercase</label>
+      <label><input type="checkbox" id="numbers"> Include Numbers</label>
+      <label><input type="checkbox" id="symbols"> Include Symbols</label>
+    </div>
+
+    <!-- Generate Button -->
+    <div class="button-group">
+      <button id="generate">Generate Password</button>
+    </div>
+
+    <!-- Password Output Section -->
+    <div class="output">
+      <input type="text" id="password" readonly placeholder="Your password will appear here">
+
+      <!-- Buttons next to password -->
+      <div class="password-actions">
+        <button id="regenerateBtn" title="Regenerate">🔄</button>
+        <button id="toggle" title="Show/Hide"><i class="fa-solid fa-eye"></i></button>
+        <button id="copy" title="Copy">Copy</button>
+      </div>
+
+      <!-- Copied message -->
+      <span id="copiedMessage">Copied!</span>
+    </div>
+
+    <!-- Warning message if no checkbox selected -->
+    <div id="warningMessage" class="warning-text"></div>
+
+    <!-- Strength Bar -->
+    <div class="strength-container">
+      <div class="strength-bar" id="strengthBar"></div>
+    </div>
+
+    <!-- Saved Passwords Section -->
+    <div class="saved-passwords">
+      <h3>Saved Passwords</h3>
+      <ul id="passwordList"></ul>
+      <button id="clearSaved" class="clear-btn">Clear Saved Passwords</button>
+    </div>
+
+  </div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
